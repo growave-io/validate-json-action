@@ -3,6 +3,15 @@ A GitHub Action that validates JSON files based on a JSON Schema.
 
 This project uses [`ajv`](https://github.com/epoberezkin/ajv), fast JSON schema validator, to perform the validation. 
 
+> **Note by masaliev**: 
+> In our fork, I made it possible to use it without docker. Collected all files in `/dist/index.js` using [vercel/ncc](https://github.com/vercel/ncc) and specified the path to this file in `action.yml`.
+>
+> After the changes, you need to 
+> - run the `npm run nccBuild` command
+> - create a tag `git tag v1.0.4`
+> - push it `git push origin v1.0.4`
+> - where this action is used, specify this tag. `uses: growave-io/validate-json-action@v1.0.4`
+
 ## Usage
 
 ### Inputs
